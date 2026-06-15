@@ -27,12 +27,12 @@ Below is a centralized technical cross-reference index detailing the exact libra
   Python
   df = df[(df['value'] >= df['value'].quantile(0.025)) & (df['value'] <= df['value'].quantile(0.975))]
   ```
-Reshaping Long Data to a Wide Matrix (Year/Month Pivot):
+* **Reshaping Long Data to a Wide Matrix (Year/Month Pivot):**
 ```
 Python
 df_bar = df_bar.groupby(['year', 'month'])['value'].mean().unstack().reindex(columns=months)
 ```
-Looping Multi-Axis Seaborn Subplots side-by-side:
+* **Looping Multi-Axis Seaborn Subplots side-by-side:**
 ```
 Python
 fig, axes = plt.subplots(1, 2, figsize=(12, 5))
@@ -40,44 +40,45 @@ for ax, col, title in zip(axes, cols, titles):
     sns.boxplot(data=df_box, x=col, y="value", ax=ax)
 ```
 ### 2. Sea Level Predictor
-Core Concept: Scatter plot analysis, calculating historical line-of-best-fit parameters, and extrapolating future predictive trends through the year 2050.
+* **Core Concept: Scatter plot analysis, calculating historical line-of-best-fit parameters, and extrapolating future predictive trends through the year 2050.**
 
-Imports: pandas, matplotlib.pyplot, scipy.stats.linregress
+* **Imports: pandas, matplotlib.pyplot, scipy.stats.linregress**
 
-Key Code Snippets & Syntax Quick-Reference:
-Executing Linear Regression Calculus:
+#### Key Code Snippets & Syntax Quick-Reference:
+* **Executing Linear Regression Calculus:**
 ```
 Python
 # Extracts slope, intercept, and standard error variables from the data
 lin_re = linregress(df['Year'], df['CSIRO Adjusted Sea Level'])
 ```
-Projecting Extrapolated Trend Lines (Using Range Arrays):
+* **Projecting Extrapolated Trend Lines (Using Range Arrays):**
 ```
 Python
 x_pred = pd.Series([i for i in range(1880, 2051)])
 y_pred = lin_re.slope * x_pred + lin_re.intercept
 ax.plot(x_pred, y_pred, 'r', label='1880-2050 Trend')
 ```
-Filtering Data Based on Recent Timeline Breakpoints:
+* **Filtering Data Based on Recent Timeline Breakpoints:**
 ```
 Python
 df_recent = df[df['Year'] >= 2000]
 ```
 ### 3. Demographic Data Analyzer
-Core Concept: Demographic profiling, categorical percentage breakdowns, and macro-financial dataset filtering using multi-conditional index tracking.
+* **Core Concept: Demographic profiling, categorical percentage breakdowns, and macro-financial dataset filtering using multi-conditional index tracking.**
 
-Imports: pandas
+* **Imports: pandas**
 
-Key Code Snippets & Syntax Quick-Reference:
-Calculating Clean Categorical Percentages:
-
+#### Key Code Snippets & Syntax Quick-Reference:
+* **Calculating Clean Categorical Percentages:**
+```
 Python
 higher_education = df[df['education'].isin(['Bachelors', 'Masters', 'Doctorate'])]
 pay_over_50k = len(higher_education[higher_education['salary'] == '>50K'])
 percentage = round((pay_over_50k / len(higher_education)) * 100, 1)
-Locating Maximum Values relative to a matching Identifier:
-
+```
+* **Locating Maximum Values relative to a matching Identifier:**
+```
 Python
 highest_earning_country = (df[df['salary'] == '>50K']['native-country'].value_counts() / df['native-country'].value_counts()).idxmax()
+```
 
-***
