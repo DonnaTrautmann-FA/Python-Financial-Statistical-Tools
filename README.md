@@ -39,28 +39,31 @@ fig, axes = plt.subplots(1, 2, figsize=(12, 5))
 for ax, col, title in zip(axes, cols, titles):
     sns.boxplot(data=df_box, x=col, y="value", ax=ax)
 ```
-2. Sea Level Predictor
+### 2. Sea Level Predictor
 Core Concept: Scatter plot analysis, calculating historical line-of-best-fit parameters, and extrapolating future predictive trends through the year 2050.
 
 Imports: pandas, matplotlib.pyplot, scipy.stats.linregress
 
 Key Code Snippets & Syntax Quick-Reference:
 Executing Linear Regression Calculus:
-
+```
 Python
 # Extracts slope, intercept, and standard error variables from the data
 lin_re = linregress(df['Year'], df['CSIRO Adjusted Sea Level'])
+```
 Projecting Extrapolated Trend Lines (Using Range Arrays):
-
+```
 Python
 x_pred = pd.Series([i for i in range(1880, 2051)])
 y_pred = lin_re.slope * x_pred + lin_re.intercept
 ax.plot(x_pred, y_pred, 'r', label='1880-2050 Trend')
+```
 Filtering Data Based on Recent Timeline Breakpoints:
-
+```
 Python
 df_recent = df[df['Year'] >= 2000]
-3. Demographic Data Analyzer
+```
+### 3. Demographic Data Analyzer
 Core Concept: Demographic profiling, categorical percentage breakdowns, and macro-financial dataset filtering using multi-conditional index tracking.
 
 Imports: pandas
