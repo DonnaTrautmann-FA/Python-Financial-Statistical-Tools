@@ -47,8 +47,10 @@ python time_series_visualizer.py
 
 Output Gallery
 1. Daily Growth (Line Plot)
+![Page_View_Time_Series_Visualizer](line_plot.png)
 2. Monthly Distribution Across Years (Bar Plot)
+![Page_View_Time_Series_Visualizer](bar_plot.png)
 3. Trend and Seasonality Analysis (Box Plots)
-
+![Page_View_Time_Series_Visualizer](box_plot.png)
 ***
 
