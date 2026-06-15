@@ -4,7 +4,7 @@ import seaborn as sns
 from pandas.plotting import register_matplotlib_converters
 register_matplotlib_converters()
 
-df = pd.read_csv(r"C:\Users\donna\Documents\Python\Page_View_Time_Series_Visualizer\fcc-forum-pageviews.csv", parse_dates=['date'], index_col='date')
+df = pd.read_csv("fcc-forum-pageviews.csv", parse_dates=['date'], index_col='date')
 
 
 # Clean data
