@@ -35,7 +35,7 @@ The script generates a multi-layered visualization saved as `sea_level_plot.png`
 ├── sea_level_predictor.py   # Main Python script containing plotting logic
 ├── sea_level_plot.png       # Final exported visualization 
 └── README.md                # Project documentation
-
+```
 How to Run This Project
 This project is structured to run self-contained.
 The dataset (`epa_sea_level.csv`) is included directly inside the project folder,
@@ -45,13 +45,17 @@ local path configurations.
 Clone this repository to your local machine or download the project files directly into a workspace folder.
 ### 2. Install Dependencies
 Ensure you have the required standard scientific computing libraries installed in your environment:
-```bash
-pip install pandas matplotlib scipy```
+```
+Bash
+pip install pandas matplotlib scipy
+```
 ### 3. Execution
 Open your terminal or command prompt.
 Navigate to the project directory where the files are located and execute the python script:
+```
 Bash
-```python sea_level_predictor.py```
+python sea_level_predictor.py
+```
 (The script will automatically read the bundled epa-sea-level.csv file,
 generate the predictive visualization trends, save the resulting image as
 sea_level_plot.png, and display the canvas interface.)
