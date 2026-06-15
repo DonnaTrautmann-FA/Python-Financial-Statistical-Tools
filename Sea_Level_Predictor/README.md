@@ -19,6 +19,9 @@ The script generates a multi-layered visualization saved as `sea_level_plot.png`
 2. **Baseline Model (Red Line):** Linear regression line of best fit reflecting trends from 1880 to the present, projected to 2050.
 3. **Accelerated Model (Purple Line):** Linear regression line of best fit reflecting modern trends from 2000 to the present,
 4. projected to 2050.
+
+### Final Visualized Trends
+![Sea Level Prediction Plot](sea_level_plot.png)
 ---
 ## Technologies Used
 * **Python 3.14**
