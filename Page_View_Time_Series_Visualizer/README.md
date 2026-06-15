@@ -32,12 +32,17 @@ Clone this repository to your local machine or download the project files direct
 ### 2. Install Dependencies
 Ensure you have the required standard data analysis and visualization libraries installed in your execution environment:
 
-```pip install pandas matplotlib seaborn```
+```
+Bash
+pip install pandas matplotlib seaborn
+```
 ### 3. Execution
 Open your terminal or command prompt, navigate to the directory containing the files, and run the main Python script:
 
-
-```python time_series_visualizer.py```
+```
+Bash
+python time_series_visualizer.py
+```
 (The script will automatically read the local csv file, execute the cleaning filters, and output three high-resolution files: line_plot.png, bar_plot.png, and box_plot.png directly into the folder.)
 
 Output Gallery
