@@ -23,18 +23,22 @@ Below is a centralized technical cross-reference index detailing the exact libra
 
 #### Key Code Snippets & Syntax Quick-Reference:
 * **Symmetric Outlier Trimming (Filter top/bottom 2.5%):**
-  ```python
+  ```
+  Python
   df = df[(df['value'] >= df['value'].quantile(0.025)) & (df['value'] <= df['value'].quantile(0.975))]
+  ```
 Reshaping Long Data to a Wide Matrix (Year/Month Pivot):
-
+```
 Python
 df_bar = df_bar.groupby(['year', 'month'])['value'].mean().unstack().reindex(columns=months)
+```
 Looping Multi-Axis Seaborn Subplots side-by-side:
-
+```
 Python
 fig, axes = plt.subplots(1, 2, figsize=(12, 5))
 for ax, col, title in zip(axes, cols, titles):
     sns.boxplot(data=df_box, x=col, y="value", ax=ax)
+```
 2. Sea Level Predictor
 Core Concept: Scatter plot analysis, calculating historical line-of-best-fit parameters, and extrapolating future predictive trends through the year 2050.
 
